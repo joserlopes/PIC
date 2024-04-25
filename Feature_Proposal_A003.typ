@@ -15,6 +15,14 @@
 
 #set par(justify: true)
 
+#show raw: it => {
+  if it.block {
+    it
+  } else {
+    highlight(fill: rgb("#4444"), it)
+  }
+}
+
 = Feature Proposal for _*Typst*_
 
 == Group A-003
@@ -46,7 +54,7 @@ meaning all of its content would be moved to a new page.
 
 The idea for this feature is to add the ability to specify the number of lines that must be present on a page, so that instead of the whole paragraph shifting to the next page, only a portion of it would. 
 Citing the description of the previously mentioned issue: "have the flexibility to set two different thresholds for the part of the paragraph that goes respectively before and after the page break. 
-For instance, #highlight(fill: rgb("#2222"), `(before: 2, after: 1)`) would mean that there must be at least 2 lines on the first page, so if e.g. the paragraph is 3-lines long, it's OK to have a single line on the second page." 
+For instance, `(before: 2, after: 1)`) would mean that there must be at least 2 lines on the first page, so if e.g. the paragraph is 3-lines long, it's OK to have a single line on the second page." 
 ]
 
 #par(first-line-indent: 1em)[
